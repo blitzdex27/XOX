@@ -7,18 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3462CA162ADA7232004F22F8 /* XOXGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462CA152ADA7232004F22F8 /* XOXGameViewModel.swift */; };
+		3462CA182ADAA048004F22F8 /* XOXGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462CA172ADAA048004F22F8 /* XOXGameView.swift */; };
+		3462CA1A2ADAA07B004F22F8 /* XOXBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462CA192ADAA07B004F22F8 /* XOXBlockView.swift */; };
+		3462CA1C2ADAA4E7004F22F8 /* APIFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462CA1B2ADAA4E7004F22F8 /* APIFetcher.swift */; };
+		3462CA1E2ADAA92F004F22F8 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462CA1D2ADAA92F004F22F8 /* QuoteModel.swift */; };
+		3462CA212ADAAA55004F22F8 /* QuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462CA202ADAAA55004F22F8 /* QuotesViewModel.swift */; };
+		3462CA232ADAAA66004F22F8 /* QuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462CA222ADAAA66004F22F8 /* QuotesView.swift */; };
+		3462CA2C2ADAD806004F22F8 /* FingerPaint-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3462CA2B2ADAD806004F22F8 /* FingerPaint-Regular.ttf */; };
 		34810BCC2AD435B8005FE55A /* XOXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34810BCB2AD435B8005FE55A /* XOXApp.swift */; };
 		34810BCE2AD435B8005FE55A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34810BCD2AD435B8005FE55A /* ContentView.swift */; };
 		34810BD02AD435B9005FE55A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34810BCF2AD435B9005FE55A /* Assets.xcassets */; };
 		34810BD32AD435B9005FE55A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34810BD22AD435B9005FE55A /* Preview Assets.xcassets */; };
+		34810BDA2AD43604005FE55A /* XOXGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34810BD92AD43604005FE55A /* XOXGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3462CA152ADA7232004F22F8 /* XOXGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XOXGameViewModel.swift; sourceTree = "<group>"; };
+		3462CA172ADAA048004F22F8 /* XOXGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XOXGameView.swift; sourceTree = "<group>"; };
+		3462CA192ADAA07B004F22F8 /* XOXBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XOXBlockView.swift; sourceTree = "<group>"; };
+		3462CA1B2ADAA4E7004F22F8 /* APIFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFetcher.swift; sourceTree = "<group>"; };
+		3462CA1D2ADAA92F004F22F8 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
+		3462CA202ADAAA55004F22F8 /* QuotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewModel.swift; sourceTree = "<group>"; };
+		3462CA222ADAAA66004F22F8 /* QuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesView.swift; sourceTree = "<group>"; };
+		3462CA252ADACB32004F22F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3462CA2B2ADAD806004F22F8 /* FingerPaint-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FingerPaint-Regular.ttf"; sourceTree = "<group>"; };
 		34810BC82AD435B8005FE55A /* XOX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XOX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34810BCB2AD435B8005FE55A /* XOXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XOXApp.swift; sourceTree = "<group>"; };
 		34810BCD2AD435B8005FE55A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		34810BCF2AD435B9005FE55A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34810BD22AD435B9005FE55A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		34810BD92AD43604005FE55A /* XOXGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XOXGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +51,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3462CA1F2ADAAA1A004F22F8 /* XOXGame */ = {
+			isa = PBXGroup;
+			children = (
+				3462CA172ADAA048004F22F8 /* XOXGameView.swift */,
+				3462CA192ADAA07B004F22F8 /* XOXBlockView.swift */,
+				3462CA152ADA7232004F22F8 /* XOXGameViewModel.swift */,
+				34810BD92AD43604005FE55A /* XOXGame.swift */,
+			);
+			path = XOXGame;
+			sourceTree = "<group>";
+		};
+		3462CA242ADAC84F004F22F8 /* Quotes */ = {
+			isa = PBXGroup;
+			children = (
+				3462CA222ADAAA66004F22F8 /* QuotesView.swift */,
+				3462CA202ADAAA55004F22F8 /* QuotesViewModel.swift */,
+				3462CA1D2ADAA92F004F22F8 /* QuoteModel.swift */,
+			);
+			path = Quotes;
+			sourceTree = "<group>";
+		};
+		3462CA282ADAD799004F22F8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3462CA2B2ADAD806004F22F8 /* FingerPaint-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		34810BBF2AD435B8005FE55A = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +99,13 @@
 		34810BCA2AD435B8005FE55A /* XOX */ = {
 			isa = PBXGroup;
 			children = (
+				3462CA252ADACB32004F22F8 /* Info.plist */,
 				34810BCB2AD435B8005FE55A /* XOXApp.swift */,
 				34810BCD2AD435B8005FE55A /* ContentView.swift */,
+				3462CA282ADAD799004F22F8 /* Fonts */,
+				3462CA1F2ADAAA1A004F22F8 /* XOXGame */,
+				3462CA1B2ADAA4E7004F22F8 /* APIFetcher.swift */,
+				3462CA242ADAC84F004F22F8 /* Quotes */,
 				34810BCF2AD435B9005FE55A /* Assets.xcassets */,
 				34810BD12AD435B9005FE55A /* Preview Content */,
 			);
@@ -125,6 +178,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3462CA2C2ADAD806004F22F8 /* FingerPaint-Regular.ttf in Resources */,
 				34810BD32AD435B9005FE55A /* Preview Assets.xcassets in Resources */,
 				34810BD02AD435B9005FE55A /* Assets.xcassets in Resources */,
 			);
@@ -137,8 +191,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3462CA1C2ADAA4E7004F22F8 /* APIFetcher.swift in Sources */,
+				3462CA212ADAAA55004F22F8 /* QuotesViewModel.swift in Sources */,
+				3462CA1A2ADAA07B004F22F8 /* XOXBlockView.swift in Sources */,
+				3462CA1E2ADAA92F004F22F8 /* QuoteModel.swift in Sources */,
 				34810BCE2AD435B8005FE55A /* ContentView.swift in Sources */,
 				34810BCC2AD435B8005FE55A /* XOXApp.swift in Sources */,
+				3462CA162ADA7232004F22F8 /* XOXGameViewModel.swift in Sources */,
+				3462CA182ADAA048004F22F8 /* XOXGameView.swift in Sources */,
+				34810BDA2AD43604005FE55A /* XOXGame.swift in Sources */,
+				3462CA232ADAAA66004F22F8 /* QuotesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +259,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -254,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -269,17 +331,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"XOX/Preview Content\"";
 				DEVELOPMENT_TEAM = YB2QWCYR88;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = XOX/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,17 +363,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"XOX/Preview Content\"";
 				DEVELOPMENT_TEAM = YB2QWCYR88;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = XOX/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

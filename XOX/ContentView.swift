@@ -8,16 +8,46 @@
 import SwiftUI
 
 struct ContentView: View {
+    private let xoxGameVM = XOXGameViewModel()
+    
+    private let quotesVM: QuotesViewModel = {
+        return QuotesViewModel()
+    }()
+  
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack {
+                QuotesView(vm: quotesVM)
+                Spacer()
+                XOXGameView(vm: xoxGameVM)
+                Spacer()
+                Button{
+                    xoxGameVM.resetGame()
+                } label: {
+                    Image(.newgame)
+                        .resizable()
+                        .modifier(ColorInvertModifier(isReversed: true))
+                }
+                .foregroundStyle(.primary)
+
+            }
+            .navigationTitle("XOX")
+            .modifier(SpecialNavbar())
         }
-        .padding()
+        
     }
 }
+
+struct SpecialNavbar: ViewModifier {
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font: UIFont(name: "FingerPaint-Regular", size: 40)!]
+    }
+    func body(content: Content) -> some View {
+        return content
+    }
+}
+
+
 
 #Preview {
     ContentView()
