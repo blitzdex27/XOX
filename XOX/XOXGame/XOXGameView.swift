@@ -37,7 +37,7 @@ struct XOXGameView: View {
                 XOXBlockView(spot: vm.boardSpot(for: .init(x: 3, y: 3)), imageSelection: vm.spotImageSelection, handler: XOXBlockHandler(_:location:))
                 
             }
-            .padding()
+            .padding(.init(top: 10, leading: 50, bottom: 0, trailing: 50))
 
         
         .alert("Notice", isPresented: $isAlertShow) {

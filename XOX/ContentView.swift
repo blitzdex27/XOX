@@ -18,9 +18,9 @@ struct ContentView: View {
         NavigationStack {
             VStack {
                 QuotesView(vm: quotesVM)
-                Spacer()
+
                 XOXGameView(vm: xoxGameVM)
-                Spacer()
+
                 Button{
                     xoxGameVM.resetGame()
                 } label: {
