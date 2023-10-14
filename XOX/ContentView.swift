@@ -15,7 +15,7 @@ struct ContentView: View {
     }()
   
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
                 QuotesView(vm: quotesVM)
 

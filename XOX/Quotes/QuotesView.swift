@@ -19,17 +19,18 @@ struct QuotesView: View {
         VStack {
             HStack {
                 Text("\"\(vm.retrieveQuote())\"")
+                    .italic()
                     .minimumScaleFactor(0.01)
                 Spacer()
             }
             Text("")
             HStack {
                 Text("- \(vm.retrieveAuthor())")
+                    .italic()
                 Spacer()
             }
                 
         }
-        .italic()
         .padding()
         
         
