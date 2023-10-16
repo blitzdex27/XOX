@@ -19,7 +19,10 @@ struct XOXGame {
     
     private let pieceMatchCountToWin: Int
     
-    init(config: Config) {
+    let config: Config
+    
+    init(config: Config = .defaultConfig) {
+        self.config = config
         self.startingPiece = config.startingPiece
         self.board = Board<XOXPiece>(columns: config.columns, rows: config.rows)
         self.pieceMatchCountToWin = config.pieceMatchCountToWin
@@ -254,9 +257,9 @@ struct XOXPiece: Piece {
     }
     
     
-    enum Variation {
-        case x
-        case o
+    enum Variation: String {
+        case x = "X"
+        case o = "O"
         
         func toggle() -> Self {
             switch self {
@@ -349,9 +352,11 @@ extension Location: Equatable {
 
 extension XOXGame {
     struct Config {
-        let startingPiece: XOXPiece
-        let columns: Int
-        let rows: Int
-        let pieceMatchCountToWin: Int
+        var startingPiece: XOXPiece
+        var columns: Int
+        var rows: Int
+        var pieceMatchCountToWin: Int
+        
+        static let defaultConfig: Config = .init(startingPiece: XOXPiece(value: .x), columns: 3, rows: 3, pieceMatchCountToWin: 3)
     }
 }

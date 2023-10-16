@@ -11,17 +11,20 @@ class XOXGameViewModel: ObservableObject {
     
     init(startingPieceVariation: XOXPiece.Variation, columns: Int = 3, rows: Int = 3, pieceMatchCountToWin: Int = 3) {
         
-        let config = XOXGame.Config(
-            startingPiece: XOXPiece(value: startingPieceVariation),
-            columns: columns,
-            rows: rows,
-            pieceMatchCountToWin: pieceMatchCountToWin
-        )
+        let config = Config(startingPieceValueString: startingPieceVariation.rawValue, columns: columns, rows: rows, pieceMatchCountToWin: pieceMatchCountToWin)
+        self.currentConfig = config
         
-        currentGame = XOXGame(config: config)
+        if let config = config.convertToXOXGameConfig() {
+            self.currentGame = XOXGame(config: config)
+        } else {
+            self.currentGame = XOXGame()
+        }
+        
         xoxGame = currentGame
         self.boardSize = currentGame.boardSize
     }
+    
+    @Published var currentConfig: Config
     
     private let currentGame: XOXGame
     
@@ -68,4 +71,20 @@ class XOXGameViewModel: ObservableObject {
     
 }
 
+extension XOXGameViewModel {
+    struct Config {
+        var startingPieceValueString: String
+        var columns: Int
+        var rows: Int
+        var pieceMatchCountToWin: Int
+        
+        func convertToXOXGameConfig() -> XOXGame.Config? {
+            guard let value = XOXPiece.Variation(rawValue: startingPieceValueString) else {
+                return nil
+            }
+             
+            return XOXGame.Config(startingPiece: XOXPiece(value: value), columns: columns, rows: rows, pieceMatchCountToWin: pieceMatchCountToWin)
+        }
+    }
+}
 

@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		342ECA972ADD7CFD00036351 /* XOXConfigToolbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342ECA962ADD7CFD00036351 /* XOXConfigToolbarModifier.swift */; };
 		3462CA162ADA7232004F22F8 /* XOXGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462CA152ADA7232004F22F8 /* XOXGameViewModel.swift */; };
 		3462CA182ADAA048004F22F8 /* XOXGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462CA172ADAA048004F22F8 /* XOXGameView.swift */; };
 		3462CA1A2ADAA07B004F22F8 /* XOXBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462CA192ADAA07B004F22F8 /* XOXBlockView.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		342ECA962ADD7CFD00036351 /* XOXConfigToolbarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XOXConfigToolbarModifier.swift; sourceTree = "<group>"; };
 		3462CA152ADA7232004F22F8 /* XOXGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XOXGameViewModel.swift; sourceTree = "<group>"; };
 		3462CA172ADAA048004F22F8 /* XOXGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XOXGameView.swift; sourceTree = "<group>"; };
 		3462CA192ADAA07B004F22F8 /* XOXBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XOXBlockView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		342ECA952ADD7CDB00036351 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				342ECA962ADD7CFD00036351 /* XOXConfigToolbarModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		3462CA1F2ADAAA1A004F22F8 /* XOXGame */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 				3462CA252ADACB32004F22F8 /* Info.plist */,
 				34810BCB2AD435B8005FE55A /* XOXApp.swift */,
 				34810BCD2AD435B8005FE55A /* ContentView.swift */,
+				342ECA952ADD7CDB00036351 /* Modifiers */,
 				3462CA282ADAD799004F22F8 /* Fonts */,
 				3462CA1F2ADAAA1A004F22F8 /* XOXGame */,
 				3462CA1B2ADAA4E7004F22F8 /* APIFetcher.swift */,
@@ -194,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				342ECA972ADD7CFD00036351 /* XOXConfigToolbarModifier.swift in Sources */,
 				3462CA1C2ADAA4E7004F22F8 /* APIFetcher.swift in Sources */,
 				3462CA212ADAAA55004F22F8 /* QuotesViewModel.swift in Sources */,
 				3462CA1A2ADAA07B004F22F8 /* XOXBlockView.swift in Sources */,
