@@ -9,7 +9,7 @@ import Foundation
 
 struct XOXGame {
     
-    private let initialPiece: XOXPiece
+    private let startingPiece: XOXPiece
     
     private var board: Board<XOXPiece>
     
@@ -19,11 +19,12 @@ struct XOXGame {
     
     private let pieceMatchCountToWin: Int
     
-    init(initialPiece: XOXPiece, columns: Int, rows: Int, pieceMatchCountToWin: Int = 3) {
-        self.initialPiece = initialPiece
-        self.board = Board<XOXPiece>(columns: columns, rows: rows)
-        self.pieceMatchCountToWin = pieceMatchCountToWin
+    init(config: Config) {
+        self.startingPiece = config.startingPiece
+        self.board = Board<XOXPiece>(columns: config.columns, rows: config.rows)
+        self.pieceMatchCountToWin = config.pieceMatchCountToWin
     }
+    
     
     var pieces: [XOXPiece] {
         board.spots.compactMap { $0.piece }
@@ -44,8 +45,8 @@ struct XOXGame {
             try board.put(previousPiece.nextPiece(), on: location)
             self.previousPiece = nextPiece
         } else {
-            try board.put(initialPiece, on: location)
-            self.previousPiece = initialPiece
+            try board.put(startingPiece, on: location)
+            self.previousPiece = startingPiece
         }
         self.previousLocation = location
     }
@@ -346,3 +347,11 @@ extension Location: Equatable {
     }
 }
 
+extension XOXGame {
+    struct Config {
+        let startingPiece: XOXPiece
+        let columns: Int
+        let rows: Int
+        let pieceMatchCountToWin: Int
+    }
+}

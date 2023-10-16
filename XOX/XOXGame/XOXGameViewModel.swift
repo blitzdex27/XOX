@@ -9,8 +9,16 @@ import Foundation
 
 class XOXGameViewModel: ObservableObject {
     
-    init(startingPiece: XOXPiece.Variation, columns: Int = 3, rows: Int = 3, pieceMatchCountToWin: Int = 3) {
-        currentGame = XOXGame(initialPiece: .init(value: .x), columns: columns, rows: rows, pieceMatchCountToWin: pieceMatchCountToWin)
+    init(startingPieceVariation: XOXPiece.Variation, columns: Int = 3, rows: Int = 3, pieceMatchCountToWin: Int = 3) {
+        
+        let config = XOXGame.Config(
+            startingPiece: XOXPiece(value: startingPieceVariation),
+            columns: columns,
+            rows: rows,
+            pieceMatchCountToWin: pieceMatchCountToWin
+        )
+        
+        currentGame = XOXGame(config: config)
         xoxGame = currentGame
         self.boardSize = currentGame.boardSize
     }
@@ -59,4 +67,5 @@ class XOXGameViewModel: ObservableObject {
     }
     
 }
+
 

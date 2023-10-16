@@ -35,7 +35,7 @@ struct XOXGameView: View {
             }
             
         }
-        .padding(.init(top: 10, leading: 50, bottom: 0, trailing: 50))
+
         
         
         .alert("Notice", isPresented: $isAlertShow) {
@@ -86,5 +86,5 @@ struct XOXGameView: View {
 }
 
 #Preview {
-    XOXGameView(vm: XOXGameViewModel())
+    XOXGameView(vm: XOXGameViewModel(startingPieceVariation: .x))
 }

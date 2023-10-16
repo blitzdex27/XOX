@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    private let xoxGameVM = XOXGameViewModel(startingPiece: .x, columns: 3, rows: 3, pieceMatchCountToWin: 3)
+    @State private var xoxGameVM = XOXGameViewModel(
+        startingPieceVariation: .x,
+        columns: 3,
+        rows: 3,
+        pieceMatchCountToWin: 3)
     
     private let quotesVM: QuotesViewModel = {
         return QuotesViewModel()
     }()
+    
+    @State private var isFullScreenPresented: Bool = false
+    
+    @State private var isConfigPresented: Bool = false
   
     var body: some View {
         NavigationView {
@@ -20,6 +28,7 @@ struct ContentView: View {
                 QuotesView(vm: quotesVM)
 
                 XOXGameView(vm: xoxGameVM)
+                    .padding(.init(top: 10, leading: 50, bottom: 0, trailing: 50))
 
                 Button{
                     xoxGameVM.resetGame()
@@ -34,13 +43,22 @@ struct ContentView: View {
 
             .navigationTitle("XOX")
             .modifier(SpecialNavbar())
-            .toolbar {
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    NavigationLink("Config >") {
-                        ConfigView()
-                    }
+            .modifier(XOXConfigToolbarModifier($isConfigPresented, xoxVm: $xoxGameVM))
+            .modifier(XOXFullScreenToolbarModifier($isFullScreenPresented, xoxVm: $xoxGameVM, mode: .embed))
+            .popover(isPresented: $isConfigPresented, content: {
+                ConfigView()
+            })
+            .fullScreenCover(isPresented: $isFullScreenPresented, content: {
+                NavigationView {
+                    XOXGameView(vm: xoxGameVM)
+                        .padding()
+                        .navigationTitle("XOX")
+                        .modifier(XOXConfigToolbarModifier($isConfigPresented, xoxVm: $xoxGameVM))
+                        .modifier(XOXFullScreenToolbarModifier($isFullScreenPresented, xoxVm: $xoxGameVM, mode: .full))
                 }
-            }
+
+            })
+
         }
     }
 }
@@ -54,6 +72,71 @@ struct SpecialNavbar: ViewModifier {
     }
 }
 
+struct XOXConfigToolbarModifier: ViewModifier {
+    
+    @Binding private var isPresented: Bool
+    
+    @Binding private var xoxVm: XOXGameViewModel
+
+    init(_ isPresented: Binding<Bool>, xoxVm: Binding<XOXGameViewModel>) {
+        self._xoxVm = xoxVm
+        self._isPresented = isPresented
+    }
+    
+    func body(content: Content) -> some View {
+        content
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button {
+                        isPresented = true
+                    } label: {
+                        Image(systemName: "wrench.and.screwdriver")
+                    }
+                }
+            }
+        
+    }
+}
+
+struct XOXFullScreenToolbarModifier: ViewModifier {
+    
+    @Binding private var isPresented: Bool
+    
+    private let mode: Mode
+    
+    @Binding private var xoxVm: XOXGameViewModel
+
+    init(_ isPresented: Binding<Bool>, xoxVm: Binding<XOXGameViewModel>, mode: Mode) {
+        self._xoxVm = xoxVm
+        self._isPresented = isPresented
+        self.mode = mode
+    }
+    
+    func body(content: Content) -> some View {
+        content
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button {
+                        isPresented.toggle()
+                       
+                    } label: {
+                        switch mode {
+                        case .full:
+                            Image(systemName: "arrow.down.backward.and.arrow.up.forward.square")
+                        case .embed:
+                            Image(systemName: "arrow.up.forward.and.arrow.down.backward.square")
+                        }
+                    }
+                }
+            }
+        
+    }
+    
+    enum Mode {
+        case full
+        case embed
+    }
+}
 
 
 #Preview {
