@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    private let xoxGameVM = XOXGameViewModel()
+    private let xoxGameVM = XOXGameViewModel(startingPiece: .x, columns: 3, rows: 3, pieceMatchCountToWin: 3)
     
     private let quotesVM: QuotesViewModel = {
         return QuotesViewModel()
@@ -24,17 +24,24 @@ struct ContentView: View {
                 Button{
                     xoxGameVM.resetGame()
                 } label: {
-                    Image(.newgame)
+                    Image("newgame")
                         .resizable()
                         .modifier(ColorInvertModifier(isReversed: true))
                 }
                 .foregroundStyle(.primary)
 
             }
+
             .navigationTitle("XOX")
             .modifier(SpecialNavbar())
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    NavigationLink("Config >") {
+                        ConfigView()
+                    }
+                }
+            }
         }
-        
     }
 }
 

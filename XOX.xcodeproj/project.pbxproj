@@ -20,6 +20,7 @@
 		34810BD02AD435B9005FE55A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34810BCF2AD435B9005FE55A /* Assets.xcassets */; };
 		34810BD32AD435B9005FE55A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34810BD22AD435B9005FE55A /* Preview Assets.xcassets */; };
 		34810BDA2AD43604005FE55A /* XOXGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34810BD92AD43604005FE55A /* XOXGame.swift */; };
+		5077A8BB2ADD1D3600F45E74 /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077A8BA2ADD1D3600F45E74 /* ConfigView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		34810BCF2AD435B9005FE55A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34810BD22AD435B9005FE55A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		34810BD92AD43604005FE55A /* XOXGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XOXGame.swift; sourceTree = "<group>"; };
+		5077A8BA2ADD1D3600F45E74 /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				3462CA282ADAD799004F22F8 /* Fonts */,
 				3462CA1F2ADAAA1A004F22F8 /* XOXGame */,
 				3462CA1B2ADAA4E7004F22F8 /* APIFetcher.swift */,
+				5077A8BA2ADD1D3600F45E74 /* ConfigView.swift */,
 				3462CA242ADAC84F004F22F8 /* Quotes */,
 				34810BCF2AD435B9005FE55A /* Assets.xcassets */,
 				34810BD12AD435B9005FE55A /* Preview Content */,
@@ -156,7 +159,7 @@
 				};
 			};
 			buildConfigurationList = 34810BC32AD435B8005FE55A /* Build configuration list for PBXProject "XOX" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -195,6 +198,7 @@
 				3462CA212ADAAA55004F22F8 /* QuotesViewModel.swift in Sources */,
 				3462CA1A2ADAA07B004F22F8 /* XOXBlockView.swift in Sources */,
 				3462CA1E2ADAA92F004F22F8 /* QuoteModel.swift in Sources */,
+				5077A8BB2ADD1D3600F45E74 /* ConfigView.swift in Sources */,
 				34810BCE2AD435B8005FE55A /* ContentView.swift in Sources */,
 				34810BCC2AD435B8005FE55A /* XOXApp.swift in Sources */,
 				3462CA162ADA7232004F22F8 /* XOXGameViewModel.swift in Sources */,
@@ -345,7 +349,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,7 +382,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

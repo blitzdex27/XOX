@@ -22,23 +22,21 @@ struct XOXGameView: View {
     @State private var isReachedMaxAlertShow = false
     
     var body: some View {
-
-            LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
-                XOXBlockView(spot: vm.boardSpot(for: .init(x: 1, y: 1)), imageSelection: vm.spotImageSelection, handler: XOXBlockHandler(_:location:))
-                XOXBlockView(spot: vm.boardSpot(for: .init(x: 1, y: 2)), imageSelection: vm.spotImageSelection, handler: XOXBlockHandler(_:location:))
-                XOXBlockView(spot: vm.boardSpot(for: .init(x: 1, y: 3)), imageSelection: vm.spotImageSelection, handler: XOXBlockHandler(_:location:))
+        
+        LazyVGrid(columns: Array(repeating: GridItem(), count: vm.boardSize.columns)) {
+            
+            ForEach(1...vm.boardSize.rows, id: \.self) { row in
                 
-                XOXBlockView(spot: vm.boardSpot(for: .init(x: 2, y: 1)), imageSelection: vm.spotImageSelection, handler: XOXBlockHandler(_:location:))
-                XOXBlockView(spot: vm.boardSpot(for: .init(x: 2, y: 2)), imageSelection: vm.spotImageSelection, handler: XOXBlockHandler(_:location:))
-                XOXBlockView(spot: vm.boardSpot(for: .init(x: 2, y: 3)), imageSelection: vm.spotImageSelection, handler: XOXBlockHandler(_:location:))
-                
-                XOXBlockView(spot: vm.boardSpot(for: .init(x: 3, y: 1)), imageSelection: vm.spotImageSelection, handler: XOXBlockHandler(_:location:))
-                XOXBlockView(spot: vm.boardSpot(for: .init(x: 3, y: 2)), imageSelection: vm.spotImageSelection, handler: XOXBlockHandler(_:location:))
-                XOXBlockView(spot: vm.boardSpot(for: .init(x: 3, y: 3)), imageSelection: vm.spotImageSelection, handler: XOXBlockHandler(_:location:))
-                
+                ForEach(1...vm.boardSize.columns, id: \.self) { column in
+                    XOXBlockView(spot: vm.boardSpot(for: .init(x: column, y: row)),
+                                 imageSelection: vm.spotImageSelection,
+                                 handler: XOXBlockHandler(_:location:))
+                }
             }
-            .padding(.init(top: 10, leading: 50, bottom: 0, trailing: 50))
-
+            
+        }
+        .padding(.init(top: 10, leading: 50, bottom: 0, trailing: 50))
+        
         
         .alert("Notice", isPresented: $isAlertShow) {
             Button("Ok") {
@@ -64,12 +62,12 @@ struct XOXGameView: View {
             Text("Reached maximum board spots limit")
             Text("Game will reset")
         }
-
+        
     }
     
     private func XOXBlockHandler(_ value: String, location: Location) {
         do {
-            try vm.put(Piece(value: value), on: location)
+            try vm.put(on: location)
             if vm.checkIfWin() {
                 isWinAlertShow = true
                 return

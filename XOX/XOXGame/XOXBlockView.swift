@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct XOXBlockView: View {
-    private let value: String?
+    private let value: XOXPiece.Variation?
     
     private let location: Location
     
@@ -20,7 +20,7 @@ struct XOXBlockView: View {
     typealias Handler = (_ value: String, _ location: Location) -> Void
     private let handler: Handler
     
-    init?(spot: Board.Spot?, sideLength: CGFloat = 100, imageSelection: ImageSelection, handler: @escaping Handler) {
+    init?(spot: Board<XOXPiece>.Spot?, sideLength: CGFloat = 100, imageSelection: ImageSelection, handler: @escaping Handler) {
         guard let spot = spot else {
             return nil
         }
@@ -32,22 +32,13 @@ struct XOXBlockView: View {
     }
     
     var body: some View {
-
-        Menu(content: {
-            Button("Choose X") {
-
-                handler("x", location)
-            }
-            
-            Button("Choose O") {
-                
-                handler("o", location)
-
-            }
-        }, label: {
+        Button {
+            handler("x", location)
+        } label: {
             imageContent
                 .modifier(ColorInvertModifier())
-        })
+        }
+
 //        .frame(width: sideLength, height: sideLength)
         .aspectRatio(1, contentMode: .fit)
         .background(.gray)
@@ -64,9 +55,9 @@ struct XOXBlockView: View {
         }
         
         switch value {
-        case "x":
+        case .x:
             imageName = "x_\(imageSelection.occupied)"
-        case "o":
+        case .o:
             imageName = "o_\(imageSelection.occupied)"
         default:
             imageName = "dragon_\(imageSelection.blank)"
