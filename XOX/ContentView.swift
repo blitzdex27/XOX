@@ -29,7 +29,7 @@ struct ContentView: View {
                     QuotesView(vm: quotesVM)
 
                     XOXGameView(vm: xoxGameVM)
-                        .padding(.init(top: 10, leading: 50, bottom: 0, trailing: 50))
+                        .padding(.init(top: 0, leading: 50, bottom: 0, trailing: 50))
 
                     Button{
                         xoxGameVM.resetGame()
@@ -41,8 +41,6 @@ struct ContentView: View {
                     .foregroundStyle(.primary)
 
                 }
-
-                .navigationTitle("XOX")
                 .modifier(SpecialNavbar())
                 .modifier(XOXConfigToolbarModifier(content: { isPresented in
                     ConfigView(isPresented: isPresented, xoxVM: $xoxGameVM)
