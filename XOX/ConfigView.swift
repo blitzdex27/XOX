@@ -32,7 +32,9 @@ struct ConfigView: View {
     private let rowsOptions = [3, 4, 5]
     
     @State private var pieceMatchCountToWin: Int
-    private let pieceMatchCountToWinOptions = [3, 4, 5]
+    private var pieceMatchCountToWinOptions: [Int] {
+        Array(3...min(columns, rows))
+    }
     
     var body: some View {
         
