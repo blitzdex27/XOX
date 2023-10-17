@@ -16,22 +16,22 @@ struct ConfigView: View {
     init(isPresented: Binding<Bool>, xoxVM: Binding<XOXGameViewModel>) {
         self._isPresented = isPresented
         self._xoxVM = xoxVM
-        self._startingPiece = xoxVM.currentConfig.startingPieceValueString
-        self._columns = xoxVM.currentConfig.columns
-        self._rows = xoxVM.currentConfig.rows
-        self._pieceMatchCountToWin = xoxVM.currentConfig.pieceMatchCountToWin
+        self._startingPiece = State(initialValue: xoxVM.currentConfig.startingPieceValueString.wrappedValue)
+        self._columns = State(initialValue: xoxVM.currentConfig.columns.wrappedValue)
+        self._rows = State(initialValue: xoxVM.currentConfig.rows.wrappedValue)
+        self._pieceMatchCountToWin = State(initialValue: xoxVM.currentConfig.pieceMatchCountToWin.wrappedValue)
     }
     
-    @Binding private var startingPiece: String
+    @State private var startingPiece: String
     private let pieces = ["X", "O"]
     
-    @Binding private var columns: Int
+    @State private var columns: Int
     private let columnsOptions = [3, 4, 5]
     
-    @Binding private var rows: Int
+    @State private var rows: Int
     private let rowsOptions = [3, 4, 5]
     
-    @Binding private var pieceMatchCountToWin: Int
+    @State private var pieceMatchCountToWin: Int
     private let pieceMatchCountToWinOptions = [3, 4, 5]
     
     var body: some View {
