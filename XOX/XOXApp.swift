@@ -12,6 +12,7 @@ struct XOXApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .modifier(SpecialNavbar())
         }
     }
 }

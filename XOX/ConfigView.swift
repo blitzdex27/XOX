@@ -58,14 +58,22 @@ struct ConfigView: View {
                         }
                
                     }
+                    .onChange(of: columns, perform: { value in
+                        pieceMatchCountToWin = min(pieceMatchCountToWin, min(columns, rows))
+                    })
+                    
                     Picker("Rows", selection: $rows) {
                         ForEach(rowsOptions, id: \.self) { rows in
                             Text("\(rows)")
                         }
                     }
+                    .onChange(of: rows, perform: { value in
+                        pieceMatchCountToWin = min(pieceMatchCountToWin, min(columns, rows))
+                    })
                 } header: {
                     Text("Size")
                 }
+                
                 
                 Section {
                     Picker("Piece Matched Count to Win", selection: $pieceMatchCountToWin) {

@@ -41,7 +41,9 @@ struct ContentView: View {
                     .foregroundStyle(.primary)
 
                 }
-                .modifier(SpecialNavbar())
+
+                .navigationTitle("XOX")
+
                 .modifier(XOXConfigToolbarModifier(content: { isPresented in
                     ConfigView(isPresented: isPresented, xoxVM: $xoxGameVM)
                 }))
