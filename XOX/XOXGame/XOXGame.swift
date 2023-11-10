@@ -118,6 +118,8 @@ struct XOXGame {
                 if diagonalDownCount >= pieceMatchCountToWin {
                     return true
                 }
+            } else {
+                break
             }
             
             
@@ -140,6 +142,8 @@ struct XOXGame {
                 if diagonalDownCount >= pieceMatchCountToWin {
                     return true
                 }
+            } else {
+                break
             }
             
             
@@ -169,6 +173,8 @@ struct XOXGame {
                 if diagonalUpCount >= pieceMatchCountToWin {
                     return true
                 }
+            } else {
+                break
             }
             
             
@@ -191,6 +197,8 @@ struct XOXGame {
                 if diagonalUpCount >= pieceMatchCountToWin {
                     return true
                 }
+            } else {
+                break
             }
             
             
@@ -214,6 +222,8 @@ struct XOXGame {
                 if horizontalCount >= pieceMatchCountToWin {
                     return true
                 }
+            } else {
+                break
             }
             
             
@@ -235,6 +245,8 @@ struct XOXGame {
                 if verticalCount >= pieceMatchCountToWin {
                     return true
                 }
+            } else {
+                break
             }
             
             
