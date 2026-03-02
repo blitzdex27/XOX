@@ -7,44 +7,30 @@
 
 import Foundation
 
+@MainActor
 class QuotesViewModel: ObservableObject {
     
-    @Published private var model: QuoteModel?
+    @Published var quote: QuoteModel?
+    private let store = QuoteStore()
     
-    
-    private let url = "https://api.quotable.io/quotes/random"
-    
-    init(model: QuoteModel? = nil) {
-        self.model = model
-        fetchQuote()
-    }
-    
-    
-    func fetchQuote() {
-        APIFetcher.shared.sendGet(url) { [weak self] data, responseObject in
-            
-            let decoder = JSONDecoder()
-            if let quotes = try? decoder.decode([QuoteModel].self, from: data),
-               let quote = quotes.first
-            {
-                self?.model = quote
-            }
-        } failure: { error in
-            self.model = .init(content: "The most beautiful thing we can experience is the mysterious.", author: "Albert Einstein")
-            print(error)
+    init() {
+        Task {
+            self.quote = await store.getQuote()
         }
-
     }
+    
+    
+
     
     func retrieveQuote() -> String {
-        if let model = model {
-            return model.content
+        if let model = quote {
+            return model.quote
         }
         return ""
     }
     
     func retrieveAuthor() -> String {
-        if let model = model {
+        if let model = quote {
             return model.author
         }
         return ""

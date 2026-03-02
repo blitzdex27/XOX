@@ -21,6 +21,7 @@
 		34810BD02AD435B9005FE55A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34810BCF2AD435B9005FE55A /* Assets.xcassets */; };
 		34810BD32AD435B9005FE55A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34810BD22AD435B9005FE55A /* Preview Assets.xcassets */; };
 		34810BDA2AD43604005FE55A /* XOXGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34810BD92AD43604005FE55A /* XOXGame.swift */; };
+		34FBB4B02F55FCF300A4E4F9 /* QuoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBB4AF2F55FCEE00A4E4F9 /* QuoteStore.swift */; };
 		5077A8BB2ADD1D3600F45E74 /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077A8BA2ADD1D3600F45E74 /* ConfigView.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		34810BCF2AD435B9005FE55A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34810BD22AD435B9005FE55A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		34810BD92AD43604005FE55A /* XOXGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XOXGame.swift; sourceTree = "<group>"; };
+		34FBB4AF2F55FCEE00A4E4F9 /* QuoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteStore.swift; sourceTree = "<group>"; };
 		5077A8BA2ADD1D3600F45E74 /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 				3462CA222ADAAA66004F22F8 /* QuotesView.swift */,
 				3462CA202ADAAA55004F22F8 /* QuotesViewModel.swift */,
 				3462CA1D2ADAA92F004F22F8 /* QuoteModel.swift */,
+				34FBB4AF2F55FCEE00A4E4F9 /* QuoteStore.swift */,
 			);
 			path = Quotes;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				34810BCE2AD435B8005FE55A /* ContentView.swift in Sources */,
 				34810BCC2AD435B8005FE55A /* XOXApp.swift in Sources */,
 				3462CA162ADA7232004F22F8 /* XOXGameViewModel.swift in Sources */,
+				34FBB4B02F55FCF300A4E4F9 /* QuoteStore.swift in Sources */,
 				3462CA182ADAA048004F22F8 /* XOXGameView.swift in Sources */,
 				34810BDA2AD43604005FE55A /* XOXGame.swift in Sources */,
 				3462CA232ADAAA66004F22F8 /* QuotesView.swift in Sources */,

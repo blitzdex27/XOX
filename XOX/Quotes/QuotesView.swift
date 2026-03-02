@@ -9,11 +9,7 @@ import SwiftUI
 
 struct QuotesView: View {
     
-    init(vm: QuotesViewModel) {
-        self.vm = vm
-    }
-    
-    @ObservedObject private var vm: QuotesViewModel
+    @StateObject private var vm: QuotesViewModel = QuotesViewModel()
     
     var body: some View {
         VStack {
@@ -38,5 +34,5 @@ struct QuotesView: View {
 }
 
 #Preview {
-    QuotesView(vm: .init())
+    QuotesView()
 }

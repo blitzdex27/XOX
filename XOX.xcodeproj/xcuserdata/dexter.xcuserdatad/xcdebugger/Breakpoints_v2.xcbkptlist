@@ -3,4 +3,156 @@
    uuid = "6F409B8B-66F4-4F5D-93E4-20A098D81F33"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1998C7CE-E6C0-4901-913C-6D6AC763069B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XOX/Quotes/QuoteStore.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "fetchQuote()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "516BEC05-3438-4E13-96F1-522BAE4A346C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XOX/Quotes/QuoteStore.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "fetchQuote()"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "516BEC05-3438-4E13-96F1-522BAE4A346C - 776408ff1c6838c4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for XOX.QuoteStore.fetchQuote() async throws -&gt; Swift.Optional&lt;XOX.QuoteModel&gt;"
+                  moduleName = "XOX.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dexter/Projects/mine/Personal%20Apps/XOX/XOX/Quotes/QuoteStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43">
+               </Location>
+               <Location
+                  uuid = "516BEC05-3438-4E13-96F1-522BAE4A346C - 64f0c51e3150dac5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for XOX.QuoteStore.fetchQuote() async throws -&gt; Swift.Optional&lt;XOX.QuoteModel&gt;"
+                  moduleName = "XOX.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dexter/Projects/mine/Personal%20Apps/XOX/XOX/Quotes/QuoteStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A98993F-ADEB-4C07-A239-1AC33032CFCB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XOX/Quotes/QuoteStore.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "getQuote()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9A98993F-ADEB-4C07-A239-1AC33032CFCB - 6a9814adc338d78f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for XOX.QuoteStore.getQuote() async -&gt; XOX.QuoteModel"
+                  moduleName = "XOX.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dexter/Projects/mine/Personal%20Apps/XOX/XOX/Quotes/QuoteStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34">
+               </Location>
+               <Location
+                  uuid = "9A98993F-ADEB-4C07-A239-1AC33032CFCB - 73ac9ee98a022589"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for XOX.QuoteStore.getQuote() async -&gt; XOX.QuoteModel"
+                  moduleName = "XOX.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dexter/Projects/mine/Personal%20Apps/XOX/XOX/Quotes/QuoteStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34">
+               </Location>
+               <Location
+                  uuid = "9A98993F-ADEB-4C07-A239-1AC33032CFCB - 74bf0325b1c7738b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for XOX.QuoteStore.getQuote() async -&gt; XOX.QuoteModel"
+                  moduleName = "XOX.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dexter/Projects/mine/Personal%20Apps/XOX/XOX/Quotes/QuoteStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34">
+               </Location>
+               <Location
+                  uuid = "9A98993F-ADEB-4C07-A239-1AC33032CFCB - f8394e045d2a1a8a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for XOX.QuoteStore.getQuote() async -&gt; XOX.QuoteModel"
+                  moduleName = "XOX.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dexter/Projects/mine/Personal%20Apps/XOX/XOX/Quotes/QuoteStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34">
+               </Location>
+               <Location
+                  uuid = "9A98993F-ADEB-4C07-A239-1AC33032CFCB - 7dc375627888c185"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for XOX.QuoteStore.getQuote() async -&gt; XOX.QuoteModel"
+                  moduleName = "XOX.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dexter/Projects/mine/Personal%20Apps/XOX/XOX/Quotes/QuoteStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
