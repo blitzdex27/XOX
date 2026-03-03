@@ -7,8 +7,6 @@
 import Foundation
 
 class QuoteStore {
-    private let url = "https://api.api-ninjas.com/v2/quoteoftheday"
-    private let apiKey = "cr6zOQFiaAoqh2StJZaPR11uqXIQk8JKnXj1FjoP"
     private let quoteDuration: Double = 3600 * 24
     private let storeKey = "QuoteStore"
     private let lastFetchDateStoreKey = "lastFetchDateStoreKey"
@@ -17,10 +15,14 @@ class QuoteStore {
         do {
             /// Check if last fetch does not exists or more than the set quote duration
             /// Fetch if true
-            if isLastFetchTimeMoreThan(quoteDuration: quoteDuration),
-               let quote = try await fetchQuote() {
-                saveQuote(quote)
-                return quote
+            if isLastFetchTimeMoreThan(quoteDuration: quoteDuration) {
+                let (quote, shouldSave) = try await fetchQuote()
+                if let quote {
+                    if shouldSave {
+                        saveQuote(quote)
+                    }
+                    return quote
+                }
             }
             
             /// Get stored quote or fallback to default
@@ -32,13 +34,22 @@ class QuoteStore {
 
     }
     
-    private func fetchQuote() async throws -> QuoteModel? {
-        let data = try await APIFetcher.shared.sendGet(url, queries: nil, headers: [
-            "X-Api-Key": apiKey
-        ])
+    private func fetchQuote() async throws -> (quote: QuoteModel?, shouldSave: Bool) {
+        let config = await RemoteConfigManager.shared.getQuoteConfig()
+        
+        if let customQuote = config?.customQuote {
+            return (customQuote, false)
+        }
+        
+        guard let url = config?.apiUrl else {
+            return (nil, false)
+        }
+        
+        let headers: [String: String] = config?.getHeaderDictionary() ?? [:]
+        let data = try await APIFetcher.shared.sendGet(url, queries: nil, headers: headers)
         
         let quotes = try JSONDecoder().decode([QuoteModel].self, from: data)
-        return quotes.first
+        return (quotes.first, true)
     }
     
     private func saveQuote(_ quote: QuoteModel) {

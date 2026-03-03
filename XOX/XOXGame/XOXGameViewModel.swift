@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAnalytics
 
 class XOXGameViewModel: ObservableObject {
     
@@ -55,7 +56,14 @@ class XOXGameViewModel: ObservableObject {
     }
     
     func checkIfWin() -> Bool {
-        xoxGame.checkIfWin()
+        let isWin = xoxGame.checkIfWin()
+        if isWin {
+            Analytics.logEvent("Win", parameters: [
+                "xoxGame.boardSize.rows": xoxGame.boardSize.rows,
+                "xoxGame.boardSize.columns": xoxGame.boardSize.columns
+            ])
+        }
+        return isWin
     }
     
     func resetGame() {
