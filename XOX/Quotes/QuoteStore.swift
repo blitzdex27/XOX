@@ -15,22 +15,19 @@ class QuoteStore {
     
     func getQuote() async -> QuoteModel {
         do {
-            if let quoteData = UserDefaults.standard.data(forKey: storeKey) {
-                let quote = try JSONDecoder().decode(QuoteModel.self, from: quoteData)
-                
-                if let lastFetchDate = UserDefaults.standard.value(forKey: lastFetchDateStoreKey) as? Date,
-                   Date().timeIntervalSince(lastFetchDate) > quoteDuration {
-                    return try await fetchQuote() ?? .default
-                } else {
-                    return quote
-                }
-                
-                
-            } else {
-                return try await fetchQuote() ?? .default
+            /// Check if last fetch does not exists or more than the set quote duration
+            /// Fetch if true
+            if isLastFetchTimeMoreThan(quoteDuration: quoteDuration),
+               let quote = try await fetchQuote() {
+                saveQuote(quote)
+                return quote
             }
+            
+            /// Get stored quote or fallback to default
+            return loadStoredQuote() ?? .default
         } catch {
-            return .default
+            /// Get stored quote or fallback to default
+            return loadStoredQuote() ?? .default
         }
 
     }
@@ -41,7 +38,29 @@ class QuoteStore {
         ])
         
         let quotes = try JSONDecoder().decode([QuoteModel].self, from: data)
-        UserDefaults.standard.set(Date(), forKey: lastFetchDateStoreKey)
         return quotes.first
+    }
+    
+    private func saveQuote(_ quote: QuoteModel) {
+        if let encoded = try? JSONEncoder().encode(quote) {
+            UserDefaults.standard.set(encoded, forKey: storeKey)
+            UserDefaults.standard.set(Date(), forKey: lastFetchDateStoreKey)
+        }
+    }
+    
+    private func loadStoredQuote() -> QuoteModel? {
+        if let data = UserDefaults.standard.value(forKey: storeKey) as? Data,
+           let decoded = try? JSONDecoder().decode(QuoteModel.self, from: data) {
+            return decoded
+        }
+        return nil
+    }
+    
+    private func isLastFetchTimeMoreThan(quoteDuration: Double) -> Bool {
+        if let lastFetchDate = UserDefaults.standard.object(forKey: lastFetchDateStoreKey) as? Date {
+            return Date().timeIntervalSince(lastFetchDate) > quoteDuration
+        } else {
+            return true
+        }
     }
 }

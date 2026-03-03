@@ -11,23 +11,35 @@ struct QuotesView: View {
     
     @StateObject private var vm: QuotesViewModel = QuotesViewModel()
     
+    var quoteContent: String {
+        vm.isLoading ?
+        "We all have the innate capacity to feel free." :
+        "\"\(vm.retrieveQuote())\""
+    }
+    var authorContent: String {
+        vm.isLoading ?
+        "Beth Kempton" :
+        "- \(vm.retrieveAuthor())"
+    }
+    
     var body: some View {
         VStack {
             HStack {
-                Text("\"\(vm.retrieveQuote())\"")
+                Text(quoteContent)
                     .italic()
                     .minimumScaleFactor(0.01)
                 Spacer()
             }
             Text("")
             HStack {
-                Text("- \(vm.retrieveAuthor())")
+                Text(authorContent)
                     .italic()
                 Spacer()
             }
                 
         }
         .padding()
+        .redacted(reason: vm.isLoading ? .placeholder : [])
         
         
     }

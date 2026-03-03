@@ -10,12 +10,14 @@ import Foundation
 @MainActor
 class QuotesViewModel: ObservableObject {
     
+    @Published var isLoading = true
     @Published var quote: QuoteModel?
     private let store = QuoteStore()
     
     init() {
         Task {
             self.quote = await store.getQuote()
+            isLoading = false
         }
     }
     
