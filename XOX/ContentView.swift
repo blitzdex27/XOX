@@ -14,10 +14,6 @@ struct ContentView: View {
         rows: 3,
         pieceMatchCountToWin: 3)
     
-    private let quotesVM: QuotesViewModel = {
-        return QuotesViewModel()
-    }()
-    
     @State private var isFullScreenPresented: Bool = false
     
     @State private var isConfigPresented: Bool = false
@@ -26,7 +22,7 @@ struct ContentView: View {
         NavigationView {
             ZStack {
                 VStack {
-                    QuotesView(vm: quotesVM)
+                    QuotesView()
 
                     XOXGameView(vm: xoxGameVM)
                         .padding(.init(top: 0, leading: 50, bottom: 0, trailing: 50))

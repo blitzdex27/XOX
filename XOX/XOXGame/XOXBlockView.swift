@@ -59,8 +59,6 @@ struct XOXBlockView: View {
             imageName = "x_\(imageSelection.occupied)"
         case .o:
             imageName = "o_\(imageSelection.occupied)"
-        default:
-            imageName = "dragon_\(imageSelection.blank)"
         }
         return Image(imageName)
             .resizable()

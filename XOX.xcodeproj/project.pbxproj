@@ -21,6 +21,12 @@
 		34810BD02AD435B9005FE55A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34810BCF2AD435B9005FE55A /* Assets.xcassets */; };
 		34810BD32AD435B9005FE55A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34810BD22AD435B9005FE55A /* Preview Assets.xcassets */; };
 		34810BDA2AD43604005FE55A /* XOXGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34810BD92AD43604005FE55A /* XOXGame.swift */; };
+		34B724032F57178400721511 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34B724022F57178400721511 /* GoogleService-Info.plist */; };
+		34B724062F571CB000721511 /* FirebaseAnalyticsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 34B724052F571CB000721511 /* FirebaseAnalyticsCore */; };
+		34B724082F571CB000721511 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 34B724072F571CB000721511 /* FirebaseRemoteConfig */; };
+		34B7240B2F5739C100721511 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7240A2F5739B200721511 /* RemoteConfigManager.swift */; };
+		34B7240E2F573F1B00721511 /* remote_config_defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34B7240D2F573F1B00721511 /* remote_config_defaults.plist */; };
+		34FBB4B02F55FCF300A4E4F9 /* QuoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBB4AF2F55FCEE00A4E4F9 /* QuoteStore.swift */; };
 		5077A8BB2ADD1D3600F45E74 /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077A8BA2ADD1D3600F45E74 /* ConfigView.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +47,10 @@
 		34810BCF2AD435B9005FE55A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34810BD22AD435B9005FE55A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		34810BD92AD43604005FE55A /* XOXGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XOXGame.swift; sourceTree = "<group>"; };
+		34B724022F57178400721511 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		34B7240A2F5739B200721511 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
+		34B7240D2F573F1B00721511 /* remote_config_defaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = remote_config_defaults.plist; sourceTree = "<group>"; };
+		34FBB4AF2F55FCEE00A4E4F9 /* QuoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteStore.swift; sourceTree = "<group>"; };
 		5077A8BA2ADD1D3600F45E74 /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,6 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34B724062F571CB000721511 /* FirebaseAnalyticsCore in Frameworks */,
+				34B724082F571CB000721511 /* FirebaseRemoteConfig in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +92,7 @@
 				3462CA222ADAAA66004F22F8 /* QuotesView.swift */,
 				3462CA202ADAAA55004F22F8 /* QuotesViewModel.swift */,
 				3462CA1D2ADAA92F004F22F8 /* QuoteModel.swift */,
+				34FBB4AF2F55FCEE00A4E4F9 /* QuoteStore.swift */,
 			);
 			path = Quotes;
 			sourceTree = "<group>";
@@ -114,6 +127,8 @@
 				3462CA252ADACB32004F22F8 /* Info.plist */,
 				34810BCB2AD435B8005FE55A /* XOXApp.swift */,
 				34810BCD2AD435B8005FE55A /* ContentView.swift */,
+				34B7240C2F573E7F00721511 /* Configurations */,
+				34B724092F5739AA00721511 /* Services */,
 				342ECA952ADD7CDB00036351 /* Modifiers */,
 				3462CA282ADAD799004F22F8 /* Fonts */,
 				3462CA1F2ADAAA1A004F22F8 /* XOXGame */,
@@ -132,6 +147,23 @@
 				34810BD22AD435B9005FE55A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		34B724092F5739AA00721511 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				34B7240A2F5739B200721511 /* RemoteConfigManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		34B7240C2F573E7F00721511 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				34B7240D2F573F1B00721511 /* remote_config_defaults.plist */,
+				34B724022F57178400721511 /* GoogleService-Info.plist */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +194,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					34810BC72AD435B8005FE55A = {
 						CreatedOnToolsVersion = 15.0;
@@ -178,6 +210,9 @@
 				Base,
 			);
 			mainGroup = 34810BBF2AD435B8005FE55A;
+			packageReferences = (
+				34B724042F571CB000721511 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 34810BC92AD435B8005FE55A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -192,7 +227,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34B7240E2F573F1B00721511 /* remote_config_defaults.plist in Resources */,
 				3462CA2C2ADAD806004F22F8 /* FingerPaint-Regular.ttf in Resources */,
+				34B724032F57178400721511 /* GoogleService-Info.plist in Resources */,
 				34810BD32AD435B9005FE55A /* Preview Assets.xcassets in Resources */,
 				34810BD02AD435B9005FE55A /* Assets.xcassets in Resources */,
 			);
@@ -206,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				342ECA972ADD7CFD00036351 /* XOXConfigToolbarModifier.swift in Sources */,
+				34B7240B2F5739C100721511 /* RemoteConfigManager.swift in Sources */,
 				3462CA1C2ADAA4E7004F22F8 /* APIFetcher.swift in Sources */,
 				3462CA212ADAAA55004F22F8 /* QuotesViewModel.swift in Sources */,
 				3462CA1A2ADAA07B004F22F8 /* XOXBlockView.swift in Sources */,
@@ -214,6 +252,7 @@
 				34810BCE2AD435B8005FE55A /* ContentView.swift in Sources */,
 				34810BCC2AD435B8005FE55A /* XOXApp.swift in Sources */,
 				3462CA162ADA7232004F22F8 /* XOXGameViewModel.swift in Sources */,
+				34FBB4B02F55FCF300A4E4F9 /* QuoteStore.swift in Sources */,
 				3462CA182ADAA048004F22F8 /* XOXGameView.swift in Sources */,
 				34810BDA2AD43604005FE55A /* XOXGame.swift in Sources */,
 				3462CA232ADAAA66004F22F8 /* QuotesView.swift in Sources */,
@@ -258,6 +297,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = YB2QWCYR88;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -281,6 +321,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -321,6 +362,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = YB2QWCYR88;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -337,6 +379,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -349,24 +392,25 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"XOX/Preview Content\"";
-				DEVELOPMENT_TEAM = YB2QWCYR88;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = XOX/Info.plist;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dekideks.XOX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -382,24 +426,25 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"XOX/Preview Content\"";
-				DEVELOPMENT_TEAM = YB2QWCYR88;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = XOX/Info.plist;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dekideks.XOX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -430,6 +475,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		34B724042F571CB000721511 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		34B724052F571CB000721511 /* FirebaseAnalyticsCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34B724042F571CB000721511 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsCore;
+		};
+		34B724072F571CB000721511 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34B724042F571CB000721511 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 34810BC02AD435B8005FE55A /* Project object */;
 }
