@@ -61,5 +61,3 @@ We may revise this policy to reflect product, legal, or operational changes. The
 For privacy-related questions, contact:
 
 - **support-email-placeholder@example.com**
-
-(Replace with your production support email before App Store submission.)
