@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="About XOX by Dekideks." />
+    <title>About | XOX by Dekideks</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script defer src="../assets/content.js"></script>
+  </head>
+  <body data-page="about">
+    <main class="shell">
+      <header class="page-header">
+        <h1 class="brand"><a href="../">XOX by Dekideks</a></h1>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="../" data-nav="home">Home</a>
+          <a href="../about/" data-nav="about">About</a>
+          <a href="../contact/" data-nav="contact">Contact</a>
+          <a href="../privacy/" data-nav="privacy">Privacy</a>
+        </nav>
+      </header>
+
+      <section class="hero" aria-label="About intro">
+        <h2>Built as a focused board game app with minimal friction.</h2>
+        <p>
+          This page explains what XOX is, who made it, and how the product is maintained.
+        </p>
+      </section>
+
+      <article
+        id="content-root"
+        class="content-card state-note"
+        data-markdown-path="../content/about.md"
+      >
+        Loading content...
+      </article>
+
+      <footer class="page-footer">
+        <span>&copy; <span id="footer-year"></span> XOX by Dekideks</span>
+        <span><a href="../privacy/">Privacy Policy</a></span>
+      </footer>
+    </main>
+  </body>
+</html>

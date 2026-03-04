@@ -1,0 +1,16 @@
+name = "xox-cms-auth"
+main = "src/index.ts"
+compatibility_date = "2026-03-04"
+workers_dev = true
+
+[vars]
+# Comma-separated list of allowed front-end origins that can start OAuth.
+# Example with custom domain:
+# ALLOWED_ORIGINS = "https://blitzdex27.github.io,https://www.yourdomain.com"
+ALLOWED_ORIGINS = "https://blitzdex27.github.io"
+PUBLIC_SITE_ORIGIN = "https://blitzdex27.github.io"
+GITHUB_SCOPE = "repo"
+
+# Required secrets (set with `wrangler secret put`):
+# - GITHUB_CLIENT_ID
+# - GITHUB_CLIENT_SECRET

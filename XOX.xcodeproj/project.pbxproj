@@ -27,6 +27,7 @@
 		34B7240B2F5739C100721511 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7240A2F5739B200721511 /* RemoteConfigManager.swift */; };
 		34B7240E2F573F1B00721511 /* remote_config_defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34B7240D2F573F1B00721511 /* remote_config_defaults.plist */; };
 		34FBB4B02F55FCF300A4E4F9 /* QuoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBB4AF2F55FCEE00A4E4F9 /* QuoteStore.swift */; };
+		35A7C2012F5AA00100A1B2C3 /* AppLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A7C2002F5AA00100A1B2C3 /* AppLinks.swift */; };
 		5077A8BB2ADD1D3600F45E74 /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077A8BA2ADD1D3600F45E74 /* ConfigView.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		34B7240A2F5739B200721511 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
 		34B7240D2F573F1B00721511 /* remote_config_defaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = remote_config_defaults.plist; sourceTree = "<group>"; };
 		34FBB4AF2F55FCEE00A4E4F9 /* QuoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteStore.swift; sourceTree = "<group>"; };
+		35A7C2002F5AA00100A1B2C3 /* AppLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLinks.swift; sourceTree = "<group>"; };
 		5077A8BA2ADD1D3600F45E74 /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 				3462CA1F2ADAAA1A004F22F8 /* XOXGame */,
 				3462CA1B2ADAA4E7004F22F8 /* APIFetcher.swift */,
 				5077A8BA2ADD1D3600F45E74 /* ConfigView.swift */,
+				35A7C2002F5AA00100A1B2C3 /* AppLinks.swift */,
 				3462CA242ADAC84F004F22F8 /* Quotes */,
 				34810BCF2AD435B9005FE55A /* Assets.xcassets */,
 				34810BD12AD435B9005FE55A /* Preview Content */,
@@ -250,6 +253,7 @@
 				3462CA1E2ADAA92F004F22F8 /* QuoteModel.swift in Sources */,
 				5077A8BB2ADD1D3600F45E74 /* ConfigView.swift in Sources */,
 				34810BCE2AD435B8005FE55A /* ContentView.swift in Sources */,
+				35A7C2012F5AA00100A1B2C3 /* AppLinks.swift in Sources */,
 				34810BCC2AD435B8005FE55A /* XOXApp.swift in Sources */,
 				3462CA162ADA7232004F22F8 /* XOXGameViewModel.swift in Sources */,
 				34FBB4B02F55FCF300A4E4F9 /* QuoteStore.swift in Sources */,

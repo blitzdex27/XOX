@@ -1,0 +1,49 @@
+backend:
+  name: github
+  repo: blitzdex27/XOX
+  branch: main
+  # Replace with your deployed Cloudflare Worker URL.
+  base_url: https://xox-cms-auth.example.workers.dev
+  # Endpoint path on the worker that starts OAuth.
+  auth_endpoint: auth
+
+site_url: https://blitzdex27.github.io/XOX
+publish_mode: simple
+
+media_folder: docs/content/media
+public_folder: /content/media
+
+collections:
+  - name: pages
+    label: Website Pages
+    editor:
+      preview: false
+    files:
+      - label: Home
+        name: home
+        file: docs/content/home.md
+        fields:
+          - label: Content
+            name: body
+            widget: markdown
+      - label: About
+        name: about
+        file: docs/content/about.md
+        fields:
+          - label: Content
+            name: body
+            widget: markdown
+      - label: Contact
+        name: contact
+        file: docs/content/contact.md
+        fields:
+          - label: Content
+            name: body
+            widget: markdown
+      - label: Privacy Policy
+        name: privacy
+        file: docs/content/privacy.md
+        fields:
+          - label: Content
+            name: body
+            widget: markdown
