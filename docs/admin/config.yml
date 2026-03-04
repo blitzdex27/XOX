@@ -3,7 +3,7 @@ backend:
   repo: blitzdex27/XOX
   branch: main
   # Replace with your deployed Cloudflare Worker URL.
-  base_url: https://xox-cms-auth.example.workers.dev
+  base_url: https://xox-cms-auth.blitzdex27.workers.dev
   # Endpoint path on the worker that starts OAuth.
   auth_endpoint: auth
 
