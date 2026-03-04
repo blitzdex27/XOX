@@ -12,25 +12,25 @@ This policy applies to the XOX iOS app distributed through the Apple App Store.
 
 Based on the current app implementation, the app may process the following:
 
-- **Game analytics events:** when a win happens, the app logs a game event including board size values.
-- **Remote configuration requests:** the app uses Firebase Remote Config to fetch runtime configuration.
-- **Quote API requests:** the app may request quote content from an endpoint defined by remote configuration.
-- **Local on-device storage:** the app stores the fetched quote and last fetch timestamp in local app storage (`UserDefaults`).
+* **Game analytics events:** when a win happens, the app logs a game event including board size values.
+* **Remote configuration requests:** the app uses Firebase Remote Config to fetch runtime configuration.
+* **Quote API requests:** the app may request quote content from an endpoint defined by remote configuration.
+* **Local on-device storage:** the app stores the fetched quote and last fetch timestamp in local app storage (`UserDefaults`).
 
 ## 3. Data we do not directly collect
 
 The current app does not directly provide:
 
-- User account registration.
-- User profile uploads.
-- In-app collection of payment card data.
+* User account registration.
+* User profile uploads.
+* In-app collection of payment card data.
 
 ## 4. Third-party services
 
 The app currently uses third-party services to operate features:
 
-- **Google Firebase services** (for app configuration and analytics-related functionality).
-- **Quote content endpoint provider(s)**, which may vary over time based on remote configuration.
+* **Google Firebase services** (for app configuration and analytics-related functionality).
+* **Quote content endpoint provider(s)**, which may vary over time based on remote configuration.
 
 These providers may receive technical request metadata, such as IP address, device/network-level data, and request headers, as part of normal service operation.
 
@@ -42,9 +42,9 @@ XOX is currently offered for a **general audience** and is **not designated in t
 
 We may introduce ads (including Google AdMob) or other monetization features in future app versions. If that happens, we will update:
 
-- This Privacy Policy,
-- App Store privacy disclosures,
-- and any required consent flows,
+* This Privacy Policy,
+* App Store privacy disclosures,
+* and any required consent flows,
 
 before the updated version is released.
 
@@ -60,4 +60,4 @@ We may revise this policy to reflect product, legal, or operational changes. The
 
 For privacy-related questions, contact:
 
-- **support-email-placeholder@example.com**
+* **swift.salmons08@icloud.com**
