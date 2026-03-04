@@ -58,18 +58,18 @@ struct ConfigView: View {
                         }
                
                     }
-                    .onChange(of: columns, perform: { value in
+                    .onChange(of: columns) {
                         pieceMatchCountToWin = min(pieceMatchCountToWin, min(columns, rows))
-                    })
+                    }
                     
                     Picker("Rows", selection: $rows) {
                         ForEach(rowsOptions, id: \.self) { rows in
                             Text("\(rows)")
                         }
                     }
-                    .onChange(of: rows, perform: { value in
+                    .onChange(of: rows) { 
                         pieceMatchCountToWin = min(pieceMatchCountToWin, min(columns, rows))
-                    })
+                    }
                 } header: {
                     Text("Size")
                 }
@@ -81,6 +81,18 @@ struct ConfigView: View {
                             Text("\(count)")
                         }
                     }
+                }
+
+                Section {
+                    Link(destination: AppLinks.privacyPolicyURL) {
+                        Label("Privacy Policy", systemImage: "lock.shield")
+                    }
+
+                    Link(destination: AppLinks.supportURL) {
+                        Label("Contact Support", systemImage: "envelope")
+                    }
+                } header: {
+                    Text("Legal")
                 }
                 
             }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XOX Content Admin</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body>
+    <main class="admin-shell">
+      <header class="page-header">
+        <h1 class="brand"><a href="../">XOX Content Admin</a></h1>
+        <nav class="main-nav" aria-label="Admin links">
+          <a href="../">Public site</a>
+          <a href="../privacy/">Privacy page</a>
+        </nav>
+      </header>
+
+      <section class="admin-box">
+        <p>
+          Sign in with GitHub to edit <code>docs/content/*.md</code> files and publish changes.
+        </p>
+        <p>
+          OAuth is handled by the Cloudflare Worker configured in
+          <code>/docs/admin/config.yml</code>.
+        </p>
+      </section>
+
+      <div id="nc-root"></div>
+    </main>
+
+    <script src="https://unpkg.com/decap-cms@^3.8.3/dist/decap-cms.js"></script>
+  </body>
+</html>

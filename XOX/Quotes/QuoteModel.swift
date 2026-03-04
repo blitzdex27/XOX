@@ -9,6 +9,10 @@ import Foundation
 
 struct QuoteModel: Codable {
     
-    let content: String
+    let quote: String
     let author: String
+    
+    static var `default`: Self {
+        QuoteModel(quote: "The most beautiful thing we can experience is the mysterious.", author: "Albert Einstein")
+    }
 }
