@@ -11,36 +11,41 @@ const OAUTH_ORIGIN_COOKIE = "xox_oauth_origin";
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
-    const url = new URL(request.url);
+    try {
+      const url = new URL(request.url);
 
-    if (request.method !== "GET") {
-      return new Response("Method not allowed", { status: 405 });
+      if (request.method !== "GET") {
+        return new Response("Method not allowed", { status: 405 });
+      }
+
+      if (url.pathname === "/health") {
+        return Response.json({ ok: true, service: "xox-cms-auth" });
+      }
+
+      if (url.pathname === "/auth") {
+        return handleAuth(request, url, env);
+      }
+
+      if (url.pathname === "/callback") {
+        return handleCallback(request, url, env);
+      }
+
+      return new Response(
+        "XOX CMS OAuth worker is running. Use /auth to start GitHub auth.",
+        { status: 200 },
+      );
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "Unknown worker error";
+      return new Response(`Worker exception: ${message}`, { status: 500 });
     }
-
-    if (url.pathname === "/health") {
-      return Response.json({ ok: true, service: "xox-cms-auth" });
-    }
-
-    if (url.pathname === "/auth") {
-      return handleAuth(url, env);
-    }
-
-    if (url.pathname === "/callback") {
-      return handleCallback(request, url, env);
-    }
-
-    return new Response(
-      "XOX CMS OAuth worker is running. Use /auth to start GitHub auth.",
-      { status: 200 },
-    );
   },
 };
 
-function handleAuth(url: URL, env: Env): Response {
-  const origin = (url.searchParams.get("origin") || "").trim();
+function handleAuth(request: Request, url: URL, env: Env): Response {
   const allowedOrigins = parseAllowedOrigins(env);
+  const origin = resolveAllowedRequestOrigin(request, url, allowedOrigins);
 
-  if (!origin || !allowedOrigins.has(origin)) {
+  if (!origin) {
     return new Response("Origin is not allowed.", { status: 403 });
   }
 
@@ -58,17 +63,23 @@ function handleAuth(url: URL, env: Env): Response {
   githubAuthorizeUrl.searchParams.set("scope", scope);
   githubAuthorizeUrl.searchParams.set("state", state);
 
-  const response = Response.redirect(githubAuthorizeUrl.toString(), 302);
-  response.headers.append(
+  const headers = new Headers({
+    Location: githubAuthorizeUrl.toString(),
+    "Cache-Control": "no-store",
+  });
+  headers.append(
     "Set-Cookie",
     buildCookie(OAUTH_STATE_COOKIE, state, { maxAge: 600 }),
   );
-  response.headers.append(
+  headers.append(
     "Set-Cookie",
     buildCookie(OAUTH_ORIGIN_COOKIE, encodeURIComponent(origin), { maxAge: 600 }),
   );
 
-  return response;
+  return new Response(null, {
+    status: 302,
+    headers,
+  });
 }
 
 async function handleCallback(request: Request, url: URL, env: Env): Promise<Response> {
@@ -78,7 +89,7 @@ async function handleCallback(request: Request, url: URL, env: Env): Promise<Res
 
   const cookies = parseCookies(request.headers.get("Cookie") || "");
   const storedState = cookies[OAUTH_STATE_COOKIE] || "";
-  const storedOrigin = decodeURIComponent(cookies[OAUTH_ORIGIN_COOKIE] || "");
+  const storedOrigin = normalizeOrigin(safeDecodeURIComponent(cookies[OAUTH_ORIGIN_COOKIE] || ""));
 
   const allowedOrigins = parseAllowedOrigins(env);
   const clearCookieHeaders = [
@@ -150,13 +161,49 @@ function parseAllowedOrigins(env: Env): Set<string> {
   const configured = (env.ALLOWED_ORIGINS || "")
     .split(",")
     .map((item) => item.trim())
-    .filter(Boolean);
+    .map((item) => normalizeOrigin(item))
+    .filter((item): item is string => Boolean(item));
 
-  if (configured.length === 0 && env.PUBLIC_SITE_ORIGIN) {
-    configured.push(env.PUBLIC_SITE_ORIGIN);
+  const publicOrigin = normalizeOrigin(env.PUBLIC_SITE_ORIGIN || "");
+  if (configured.length === 0 && publicOrigin) {
+    configured.push(publicOrigin);
   }
 
   return new Set(configured);
+}
+
+function resolveAllowedRequestOrigin(
+  request: Request,
+  url: URL,
+  allowedOrigins: Set<string>,
+): string | null {
+  const candidates = [
+    url.searchParams.get("origin") || "",
+    request.headers.get("Origin") || "",
+    request.headers.get("Referer") || "",
+  ];
+
+  for (const candidate of candidates) {
+    const normalized = normalizeOrigin(candidate);
+    if (normalized && allowedOrigins.has(normalized)) {
+      return normalized;
+    }
+  }
+
+  return null;
+}
+
+function normalizeOrigin(value: string): string | null {
+  const trimmed = value.trim();
+  if (!trimmed) {
+    return null;
+  }
+
+  try {
+    return new URL(trimmed).origin;
+  } catch {
+    return null;
+  }
 }
 
 function parseCookies(cookieHeader: string): Record<string, string> {
@@ -169,6 +216,17 @@ function parseCookies(cookieHeader: string): Record<string, string> {
     out[rawKey] = rest.join("=");
   });
   return out;
+}
+
+function safeDecodeURIComponent(value: string): string {
+  if (!value) {
+    return "";
+  }
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
 }
 
 function buildCookie(name: string, value: string, options: { maxAge: number }): string {
@@ -222,11 +280,31 @@ function successHtml(token: string, origin: string): string {
     <p>Authentication complete. You can close this window.</p>
     <script>
       (function () {
-        var payload = JSON.stringify({ token: "${safeToken}", provider: "github" });
-        if (window.opener) {
-          window.opener.postMessage("authorization:github:success:" + payload, "${safeOrigin}");
+        var payload = JSON.stringify({ provider: "github", token: "${safeToken}" });
+        var sent = false;
+
+        function sendSuccess(targetOrigin) {
+          if (!window.opener || sent) {
+            return;
+          }
+          sent = true;
+          window.opener.postMessage("authorization:github:success:" + payload, targetOrigin || "*");
+          setTimeout(function () { window.close(); }, 100);
         }
-        window.close();
+
+        window.addEventListener("message", function (event) {
+          sendSuccess(event.origin || "*");
+        }, false);
+
+        if (window.opener) {
+          window.opener.postMessage("authorizing:github", "${safeOrigin}");
+          window.opener.postMessage("authorizing:github", "*");
+        }
+
+        setTimeout(function () {
+          sendSuccess("${safeOrigin}");
+          sendSuccess("*");
+        }, 900);
       })();
     </script>
   </body>
@@ -245,6 +323,8 @@ function failureHtml(message: string, origin: string): string {
       (function () {
         if (window.opener) {
           window.opener.postMessage("authorization:github:error:${safeMessage}", "${safeOrigin}");
+          window.opener.postMessage("authorization:github:error:${safeMessage}", "*");
+          setTimeout(function () { window.close(); }, 100);
         }
       })();
     </script>
