@@ -1,6 +1,8 @@
 # Privacy Policy for XOX by Dekideks
 
-**Effective date:** March 4, 2026
+**Effective date:** November 25, 2026
+
+This version replaces the one effective March 4, 2026. Only the contact address changed.
 
 This Privacy Policy explains how XOX by Dekideks ("XOX", "we", "us", or "our") handles information when you use the XOX iOS app.
 
@@ -60,4 +62,4 @@ We may revise this policy to reflect product, legal, or operational changes. The
 
 For privacy-related questions, contact:
 
-* **swift.salmons08@icloud.com**
+* **app.support@dekideks.com**

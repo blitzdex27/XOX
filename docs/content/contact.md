@@ -2,7 +2,7 @@
 
 For support requests, bug reports, or App Store review communication:
 
-* Support Email: **swift.salmons08@icloud.com**
+* Support Email: **app.support@dekideks.com**
 
 ## Response expectations
 
