@@ -210,12 +210,16 @@ struct XOXGame {
     }
     
     private func checkHorizontalWin(for piece: XOXPiece, on location: Location) -> Bool {
-        var horizontalCount = 0
-        var unit = 1
+        var horizontalCount = 1
         
-        while unit <= board.size.columns {
+        var _location = location
+        
+        // rightwards
+        while _location.x < board.size.columns {
             
-            if let pieceOnSpot = board.spot(for: Location(x: unit, y: location.y))?.piece,
+            _location = Location(x: _location.x + 1, y: _location.y)
+            
+            if let pieceOnSpot = board.spot(for: _location)?.piece,
                pieceOnSpot == piece
             {
                 horizontalCount += 1
@@ -225,20 +229,42 @@ struct XOXGame {
             } else {
                 break
             }
-            
-            
-            unit += 1
         }
+        
+        // leftwards
+        
+        _location = location
+        
+        while _location.x > 1 {
+            
+            _location = Location(x: _location.x - 1, y: _location.y)
+            
+            if let pieceOnSpot = board.spot(for: _location)?.piece,
+               pieceOnSpot == piece
+            {
+                horizontalCount += 1
+                if horizontalCount >= pieceMatchCountToWin {
+                    return true
+                }
+            } else {
+                break
+            }
+        }
+        
         return false
     }
     
     private func checkVerticalWin(for piece: XOXPiece, on location: Location) -> Bool {
-        var verticalCount = 0
-        var unit = 1
+        var verticalCount = 1
         
-        while unit <= board.size.rows {
+        var _location = location
+        
+        // downwards
+        while _location.y < board.size.rows {
             
-            if let pieceOnSpot = board.spot(for: Location(x: location.x, y: unit))?.piece,
+            _location = Location(x: _location.x, y: _location.y + 1)
+            
+            if let pieceOnSpot = board.spot(for: _location)?.piece,
                pieceOnSpot == piece
             {
                 verticalCount += 1
@@ -248,10 +274,28 @@ struct XOXGame {
             } else {
                 break
             }
-            
-            
-            unit += 1
         }
+        
+        // upwards
+        
+        _location = location
+        
+        while _location.y > 1 {
+            
+            _location = Location(x: _location.x, y: _location.y - 1)
+            
+            if let pieceOnSpot = board.spot(for: _location)?.piece,
+               pieceOnSpot == piece
+            {
+                verticalCount += 1
+                if verticalCount >= pieceMatchCountToWin {
+                    return true
+                }
+            } else {
+                break
+            }
+        }
+        
         return false
     }
     

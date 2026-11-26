@@ -29,7 +29,18 @@
 		34FBB4B02F55FCF300A4E4F9 /* QuoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBB4AF2F55FCEE00A4E4F9 /* QuoteStore.swift */; };
 		35A7C2012F5AA00100A1B2C3 /* AppLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A7C2002F5AA00100A1B2C3 /* AppLinks.swift */; };
 		5077A8BB2ADD1D3600F45E74 /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077A8BA2ADD1D3600F45E74 /* ConfigView.swift */; };
+		66521C84EF664506AA454E60 /* XOXGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6228F56528B33DED82F33F87 /* XOXGameTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6CB490ADBBC7BAD197876683 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34810BC02AD435B8005FE55A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34810BC72AD435B8005FE55A;
+			remoteInfo = XOX;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		342ECA962ADD7CFD00036351 /* XOXConfigToolbarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XOXConfigToolbarModifier.swift; sourceTree = "<group>"; };
@@ -54,6 +65,8 @@
 		34FBB4AF2F55FCEE00A4E4F9 /* QuoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteStore.swift; sourceTree = "<group>"; };
 		35A7C2002F5AA00100A1B2C3 /* AppLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLinks.swift; sourceTree = "<group>"; };
 		5077A8BA2ADD1D3600F45E74 /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
+		6228F56528B33DED82F33F87 /* XOXGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XOXGameTests.swift; sourceTree = "<group>"; };
+		6DF993044779A6AC0F748341 /* XOXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XOXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +76,13 @@
 			files = (
 				34B724062F571CB000721511 /* FirebaseAnalyticsCore in Frameworks */,
 				34B724082F571CB000721511 /* FirebaseRemoteConfig in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60BE4B8A875E7A456215A2C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				34810BCA2AD435B8005FE55A /* XOX */,
+				6C180962551B6417AC54C05F /* XOXTests */,
 				34810BC92AD435B8005FE55A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				34810BC82AD435B8005FE55A /* XOX.app */,
+				6DF993044779A6AC0F748341 /* XOXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,6 +191,14 @@
 			path = Configurations;
 			sourceTree = "<group>";
 		};
+		6C180962551B6417AC54C05F /* XOXTests */ = {
+			isa = PBXGroup;
+			children = (
+				6228F56528B33DED82F33F87 /* XOXGameTests.swift */,
+			);
+			path = XOXTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -189,6 +219,24 @@
 			productReference = 34810BC82AD435B8005FE55A /* XOX.app */;
 			productType = "com.apple.product-type.application";
 		};
+		613CC25913508B80C1897A22 /* XOXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F63D0D74D0D5617192366AC /* Build configuration list for PBXNativeTarget "XOXTests" */;
+			buildPhases = (
+				6867B89762C083C9D6F9B34D /* Sources */,
+				60BE4B8A875E7A456215A2C0 /* Frameworks */,
+				64A28732F0455FE807E76F5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				66418F67AEE2091D8714E7DF /* PBXTargetDependency */,
+			);
+			name = XOXTests;
+			productName = XOXTests;
+			productReference = 6DF993044779A6AC0F748341 /* XOXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -201,6 +249,10 @@
 				TargetAttributes = {
 					34810BC72AD435B8005FE55A = {
 						CreatedOnToolsVersion = 15.0;
+					};
+					613CC25913508B80C1897A22 = {
+						CreatedOnToolsVersion = 27.1;
+						TestTargetID = 34810BC72AD435B8005FE55A;
 					};
 				};
 			};
@@ -221,6 +273,7 @@
 			projectRoot = "";
 			targets = (
 				34810BC72AD435B8005FE55A /* XOX */,
+				613CC25913508B80C1897A22 /* XOXTests */,
 			);
 		};
 /* End PBXProject section */
@@ -235,6 +288,13 @@
 				34B724032F57178400721511 /* GoogleService-Info.plist in Resources */,
 				34810BD32AD435B9005FE55A /* Preview Assets.xcassets in Resources */,
 				34810BD02AD435B9005FE55A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64A28732F0455FE807E76F5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +323,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6867B89762C083C9D6F9B34D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66521C84EF664506AA454E60 /* XOXGameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		66418F67AEE2091D8714E7DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34810BC72AD435B8005FE55A /* XOX */;
+			targetProxy = 6CB490ADBBC7BAD197876683 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		34810BD42AD435B9005FE55A /* Debug */ = {
@@ -396,7 +472,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_ASSET_PATHS = "\"XOX/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -413,7 +489,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dekideks.XOX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -430,7 +506,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_ASSET_PATHS = "\"XOX/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -447,13 +523,45 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dekideks.XOX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		63CC5CB06549894128C4436A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dekideks.XOXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XOX.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/XOX";
+			};
+			name = Debug;
+		};
+		6B7FB365904C6C69E3BD49CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dekideks.XOXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XOX.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/XOX";
 			};
 			name = Release;
 		};
@@ -474,6 +582,15 @@
 			buildConfigurations = (
 				34810BD72AD435B9005FE55A /* Debug */,
 				34810BD82AD435B9005FE55A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6F63D0D74D0D5617192366AC /* Build configuration list for PBXNativeTarget "XOXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63CC5CB06549894128C4436A /* Debug */,
+				6B7FB365904C6C69E3BD49CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
